@@ -8,7 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   </head>
   <body ng-init="hello = 'hello world!'">
-    {{hello}}
+
+    <toolbar></toolbar>
+
+    <div layout-padding>
+      <ui-view></ui-view>
+    </div>
 
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
@@ -20,5 +25,7 @@
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
     <script src="app.js"></script>
+    <script src="components/profile/profile-ctr.js"></script>
+    <script src="components/toolbar/toolbar.dir.js"></script>
   </body>
 </html>

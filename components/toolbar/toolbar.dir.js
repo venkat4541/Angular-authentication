@@ -2,18 +2,19 @@
   'use strict';
 
   angular
-    .module('appAuth')
-    .directive('toolbar', toobar)
+    .module('authApp')
+    .directive('toolbar', toolbar);
 
   function toolbar() {
     return {
-      templateURL: 'components/toolbar/toolbar.tpl.html',
-      controller: 'toolbarController',
-      controllerAs: 'toolbar'
-    }
-
-    function toolbarController() {
-      
+      templateUrl: 'components/toolbar/toolbar.tpl.html'
+      //controller: 'toolbarController',
+      //controllerAs: 'toolbar'
     }
   }
-})
+
+  function toolbarController() {
+
+  }
+
+})();

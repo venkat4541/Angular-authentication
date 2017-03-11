@@ -10,4 +10,4 @@
     vm.message = 'Hello!';
   }
 
-});
+})();
