@@ -9,6 +9,10 @@ angular
       clientID: 'eGYuU4jMvlL1VuypqlBeaGJc70Q18nfy'
     });
 
+    jwtInterceptorProvider.tokenGetter = function(store) {
+      return store.get('id_token');
+    }
+
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
@@ -16,11 +20,16 @@ angular
         url: '/home',
         templateUrl: 'components/home/home.tpl.html'
       })
-
       .state('profile', {
         url: '/profile',
         templateUrl: 'components/profile/profile.tpl.html',
         controller: 'profileController as user'
-      })
+      });
 
+      $httpProvider.interceptors.push('jwtInterceptor');
+  })
+  .config(function Config($httpProvider, jwtOptionsProvider) {
+    jwtOptionsProvider.config({
+      whiteListedDomains: ['localhost']
+    });
   });
